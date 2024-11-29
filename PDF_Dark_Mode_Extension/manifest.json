@@ -1,0 +1,29 @@
+{
+  "manifest_version": 3,
+  "name": "PDF Dark Mode",
+  "description": "Dark Mode For PDF Reader Extension",
+  "version": "1.0",
+  "action": {
+    "default_icon": {
+      "16": "images/rainbow.png"
+    }
+  },
+  "permissions": [
+    "activeTab",
+    "storage",
+    "scripting"
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "<all_urls>"
+      ],
+      "js": [
+        "scripts/content.js"
+      ]
+    }
+  ],
+  "background": {
+    "service_worker": "scripts/background.js"
+  }
+}
